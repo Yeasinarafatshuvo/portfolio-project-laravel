@@ -14,10 +14,10 @@
           <div class="pt-4">
             <ul class="nav nav-pills mb-3 justify-content-center justify-content-lg-between" id="pills-tab" role="tablist">
               <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-skill-tab" data-bs-toggle="pill" data-bs-target="#pills-skill" type="button" role="tab" aria-controls="pills-skill" aria-selected="true">Main Skills</button>
+                <button class="nav-link active" id="pills-skill-tab" data-bs-toggle="pill" data-bs-target="#pills-skill" type="button" role="tab" aria-controls="pills-skill" aria-selected="true">Frontend Skills</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-Award-tab" data-bs-toggle="pill" data-bs-target="#pills-Award" type="button" role="tab" aria-controls="pills-Award" aria-selected="false">Award</button>
+                <button class="nav-link" id="pills-Award-tab" data-bs-toggle="pill" data-bs-target="#pills-Award" type="button" role="tab" aria-controls="pills-Award" aria-selected="false">Backend Skills </button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-experience-tab" data-bs-toggle="pill" data-bs-target="#pills-experience" type="button" role="tab" aria-controls="pills-experience" aria-selected="false">Experience</button>

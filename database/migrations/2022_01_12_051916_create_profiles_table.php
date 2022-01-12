@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->string('user_name');
             $table->string('user_email');
+            $table->string('user_phone');
             $table->string('user_password');
             $table->string('user_photo');
             $table->timestamps();
