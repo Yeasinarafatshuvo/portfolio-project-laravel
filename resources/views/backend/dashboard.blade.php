@@ -19,12 +19,17 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
+                        <a href="{{ route('about.view') }}" class="nav-link align-middle px-0">
                             <i class="far fa-address-card"></i> <span class="ms-1 d-none d-sm-inline">About</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
+                        <a href="{{ route('skill.view') }}" class="nav-link align-middle px-0">
+                            <i class="far fa-address-card"></i> <span class="ms-1 d-none d-sm-inline">Skills</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('banner.view') }}" class="nav-link align-middle px-0">
                             <i class="fab fa-chromecast"></i> <span class="ms-1 d-none d-sm-inline">Banners</span>
                         </a>
                     </li>

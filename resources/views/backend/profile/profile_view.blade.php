@@ -14,9 +14,9 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($profile_data as $item)
+            @foreach ($profile_data as $key =>$item)
             <tr class="text-center">
-                <td class="pt-5">1</td>
+                <td class="pt-5">{{ $key+1 }}</td>
                 <td class="pt-5">{{ $item->user_name }}</td>
                 <td class="pt-5">{{ $item->user_email }}</td>
                 <td class="pt-5">{{ $item->user_phone }}</td>
