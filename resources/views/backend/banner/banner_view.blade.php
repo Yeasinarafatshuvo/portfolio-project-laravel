@@ -27,7 +27,7 @@
                 <td class="pt-5">{{ $banners->profile_id }}</td>
                 <td><img src="{{ asset('backend/images/' .$banners->cover_photos) }}" alt="" style="width: 200px"; height="100px"></td>
                 <td class="pt-5">
-                    <a href="" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('banner.edit', $banners->id) }}" class="btn btn-primary">Edit</a>
                 </td>
             </tr>
         @endforeach

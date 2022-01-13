@@ -8,6 +8,7 @@ use App\Models\Profile;
 use App\Models\About;
 use App\Models\Skill;
 use App\Models\Banner;
+use App\Models\Education;
 
 class DashboardController extends Controller
 {
@@ -227,12 +228,150 @@ class DashboardController extends Controller
 
             if($save_data)
             {
-                return redirect()->route('banner.view')->with('success', 'Successfully, added your Skills');
+                return redirect()->route('banner.view')->with('success', 'Successfully, added your Banner');
             }
         }
 
 
     }
+
+    //return edit banner page
+    public function banner_edit($id)
+    {
+        $banner_specefic_data = Banner::find($id);
+        return view('backend.banner.banner_edit', compact('banner_specefic_data'));
+
+    }
+
+    //udpate edit data
+    public function banner_update(Request $request, $id)
+    {
+        $banner_specefic_data = Banner::find($id);
+
+         //validate data
+         $validate_data = $request->validate([
+            'skills'=>'required',
+            'area'=>'required',         
+        ]);
+
+        if($validate_data)
+        {
+            $banner_specefic_data->skills = $request->skills;
+            $banner_specefic_data->area = $request->area;
+            $banner_specefic_data->profile_id = $request->session()->get('logged_user');
+
+            if($request->file('cover_photos'))
+            {
+                $file = $request->file('cover_photos');
+                @unlink(public_path('backend/images/'.$banner_specefic_data->cover_photos));
+                $file_name = 'yeasin'.date('YmHi').'.'.$file->extension();
+                // dd($file_name);
+                $file->move(public_path('backend/images'), $file_name);
+                $banner_specefic_data['cover_photos'] =  $file_name;
+            }
+
+            $save_data = $banner_specefic_data->save();
+
+            if($save_data)
+            {
+                return redirect()->route('banner.view')->with('success', 'Successfully, update your banners');
+            }
+
+
+        }
+
+    }
+
+    //educaiton view page
+    public function education_view()
+    {
+        $data['education_data'] = Education::all();
+        return view('backend.education.education_view', $data);
+    }
+
+    //return page for adding education data
+    public function education_add()
+    {
+        return view('backend.education.education_add');
+    }
+
+    //store education data
+    public function education_store(Request $request)
+    {
+        //validation data
+        $validate_data = $request->validate([
+            'edu_organization'=>'required',
+            'edu_level'=>'required',
+            'passing_year'=>'required',
+            'result'=>'required',
+        ]);
+
+        if($validate_data)
+        {
+            $education_instance = new Education();
+            $education_instance->edu_organization = $request->edu_organization;
+            $education_instance->edu_level = $request->edu_level;
+            $education_instance->passing_year = $request->passing_year;
+            $education_instance->result = $request->result;
+            $save_data = $education_instance->save();
+
+            if($save_data)
+            {
+                return redirect()->route('education.view')->with('success', 'Successfully, Added your educations');
+
+            }
+        }
+    }
+
+    //return page for edit
+    public function education_edit($id)
+    {
+        $find_specefic_education_data = Education::find($id);
+        return view('backend.education.education_edit', compact('find_specefic_education_data'));
+    }
+
+    //update education data
+    public function education_update(Request $request, $id)
+    {
+        $find_specefic_education_data = Education::find($id);
+        //validation data
+        $validate_data = $request->validate([
+            'edu_organization'=>'required',
+            'edu_level'=>'required',
+            'passing_year'=>'required',
+            'result'=>'required',
+        ]);
+
+        if($validate_data)
+        {
+            $find_specefic_education_data->edu_organization = $request->edu_organization;
+            $find_specefic_education_data->edu_level = $request->edu_level;
+            $find_specefic_education_data->passing_year = $request->passing_year;
+            $find_specefic_education_data->result = $request->result;
+            $save_data = $find_specefic_education_data->save();
+
+            if($save_data)
+            {
+                return redirect()->route('education.view')->with('success', 'Successfully, Updated your educations');
+
+            }
+
+        }
+
+    }
+
+    //delete education data
+    public function education_delete($id)
+    {
+        $find_specefic_education_delete_data = Education::find($id);
+        $delete_education_data = $find_specefic_education_delete_data->delete();
+        if($delete_education_data)
+        {
+            return redirect()->route('education.view')->with('success', 'Successfully, Deleted your educations');
+        }
+    }
+
+
 
 
 

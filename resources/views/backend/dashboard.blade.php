@@ -34,7 +34,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
+                        <a href="{{ route('education.view') }}" class="nav-link align-middle px-0">
                             <i class="fas fa-user-graduate"></i> <span class="ms-1 d-none d-sm-inline">Education</span>
                         </a>
                     </li>

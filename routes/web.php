@@ -35,7 +35,16 @@ Route::get('/admin/dashboard/skill/delete/{id}', [DashboardController::class, 's
 Route::get('/admin/dashboard/banner/view', [DashboardController::class, 'banner_view'])->name('banner.view');
 Route::get('/admin/dashboard/banner/add', [DashboardController::class, 'banner_add'])->name('banner.add');
 Route::post('/admin/dashboard/banner/store', [DashboardController::class, 'banner_store'])->name('banner.store');
+Route::get('/admin/dashboard/banner/edit/{id}', [DashboardController::class, 'banner_edit'])->name('banner.edit');
+Route::post('/admin/dashboard/banner/update/{id}', [DashboardController::class, 'banner_update'])->name('banner.update');
 
+//Education route
+Route::get('/admin/dashboard/education/view', [DashboardController::class, 'education_view'])->name('education.view');
+Route::get('/admin/dashboard/education/add', [DashboardController::class, 'education_add'])->name('education.add');
+Route::post('/admin/dashboard/education/store', [DashboardController::class, 'education_store'])->name('education.store');
+Route::get('/admin/dashboard/education/edit/{id}', [DashboardController::class, 'education_edit'])->name('education.edit');
+Route::post('/admin/dashboard/education/update/{id}', [DashboardController::class, 'education_update'])->name('education.update');
+Route::get('/admin/dashboard/education/delete/{id}', [DashboardController::class, 'education_delete'])->name('education.delete');
 
 
 

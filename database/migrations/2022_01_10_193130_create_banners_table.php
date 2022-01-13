@@ -18,7 +18,7 @@ class CreateBannersTable extends Migration
             $table->string('skills');
             $table->string('area');
             $table->integer('profile_id')->nullable();
-            $table->string('cover_photos');
+            $table->string('cover_photos')->nullable();
             $table->timestamps();
         });
     }
