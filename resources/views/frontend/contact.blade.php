@@ -15,22 +15,46 @@
             <a href="">yeasinshuvo76@gmail.com</a>
           </div>
         </div>
-        <form action="">
+        <form action="{{ route('contact.post') }}" method="POST">
+          @csrf
+          @if (Session::get('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+          @endif
           <div class="mb-4">
-            <input type="text" class="form-control" placeholder="Your Name..." autocomplete="off">
+            <input type="text" id="customer_name" name="customer_name" class="form-control" placeholder="Your Name..." autocomplete="off">
+            <span class="text-danger">
+              @error('customer_name')
+                  {{ $message }}
+              @enderror
+            </span>
           </div>
           <div class="mb-4">
-            <input type="text" class="form-control" placeholder="Your Phone..." autocomplete="off">
+            <input type="text" id="customer_phone" name="customer_phone" class="form-control" placeholder="Your Phone..." autocomplete="off">
+            <span class="text-danger">
+              @error('customer_phone')
+                  {{ $message }}
+              @enderror
+            </span>
           </div>
           <div class="mb-4">
-            <input type="text" class="form-control" placeholder="Your Email..." autocomplete="off">
+            <input id="customer_email" type="text" name="customer_email" class="form-control" placeholder="Your Email..." autocomplete="off">
+            <span class="text-danger">
+              @error('customer_email')
+                  {{ $message }}
+              @enderror
+            </span>
           </div>
           <div class="mb-4">
-           <textarea name="" id="" cols="40" rows="4" class="form-control" placeholder="Write a Message..." autocomplete="off">
-
-           </textarea>
+            <textarea id="customer_message" name="customer_message" id="" cols="40" rows="4" class="form-control" placeholder="Write a Message..." autocomplete="off"></textarea>
           </div>
-          <button type="submit" class="btn main-btn">Submit</button>     
+          <span class="text-danger">
+            @error('customer_phone')
+                {{ $message }}
+            @enderror
+          </span><br>
+          <button  type="submit" class="btn main-btn">Submit</button>     
         </form>
       </div>
       <div class="col-lg-6 order-1 mb-4 order-lg-1 mb-lg-0">

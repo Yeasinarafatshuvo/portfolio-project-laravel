@@ -9,6 +9,7 @@ use App\Models\About;
 use App\Models\Skill;
 use App\Models\Banner;
 use App\Models\Education;
+use App\Models\Experience;
 
 class DashboardController extends Controller
 {
@@ -370,6 +371,98 @@ class DashboardController extends Controller
             return redirect()->route('education.view')->with('success', 'Successfully, Deleted your educations');
         }
     }
+
+
+    //return experience view page
+    public function experience_view()
+    {
+        $data['experience_data'] = Experience::all();
+        return view('backend.experience.experience_view', $data);
+    }
+
+    //return page for adding experience data
+    public function experience_add()
+    {
+        return view('backend.experience.experience_add');
+    }
+
+    //store experience data
+    public function experience_store(Request $request)
+    {
+        //validation data
+        $validate_data = $request->validate([
+            'organization' => 'required',
+            'position' => 'required',
+            'time' => 'required',
+        ]);
+
+        if($validate_data)
+        {
+            $experience_instance = new Experience();
+            $experience_instance->organization = $request->organization;
+            $experience_instance->position = $request->position;
+            $experience_instance->time = $request->time;
+            $save_data = $experience_instance->save();
+
+            if($save_data)
+            {
+                return redirect()->route('experience.view')->with('success', 'Successfully, Added experience details');
+            }
+
+
+        }
+        
+    }
+
+    //return page for edit experience data
+    public function experience_edit($id)
+    {
+        $specefic_experience_data = Experience::find($id);
+        return view('backend.experience.experience_edit', compact('specefic_experience_data'));
+    }
+
+    //update experience data
+    public function experience_update(Request $request, $id)
+    {
+        $specefic_experience_data = Experience::find($id);
+
+        //validation data
+        $validate_data = $request->validate([
+            'organization' => 'required',
+            'position' => 'required',
+            'time' => 'required',
+        ]);
+
+        if($validate_data)
+        {         
+            $specefic_experience_data->organization = $request->organization;
+            $specefic_experience_data->position = $request->position;
+            $specefic_experience_data->time = $request->time;
+            $save_data = $specefic_experience_data->save();
+
+            if($save_data)
+            {
+                return redirect()->route('experience.view')->with('success', 'Successfully, updated experience details');
+            }
+
+
+        }
+
+    }
+
+    //delete experience data
+    public function experience_delete($id)
+    {
+        $delete_experience_data = Experience::find($id);
+        $delete_data = $delete_experience_data->delete();
+
+        if($delete_data)
+        {
+            return redirect()->route('experience.view')->with('success', 'Successfully, deleted experience data');
+        }
+    }
+
+
 
 
 

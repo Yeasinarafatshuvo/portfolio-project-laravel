@@ -3,16 +3,16 @@
     <div class="container-fluid">
         <div class="row justify-content-center pt-5">
             <div class="col-md-12 ">
-                <h1 class="bg-primary">Add your Education Details </h1>
-                <form action="{{ route('education.store') }}" method="POST" >
+                <h1 class="bg-primary">Add your Experience Details </h1>
+                <form action="{{ route('experience.store') }}" method="POST" >
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Enter Organization Name</label>
-                                <input id="edu_organization" type="text" class="form-control" name="edu_organization">
+                                <input id="organization" type="text" class="form-control" name="organization">
                                 <span class="text-danger">
-                                    @error('edu_organization')
+                                    @error('organization')
                                         {{ $message }}
                                     @enderror
                                 </span>
@@ -20,10 +20,10 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="">Enter Education Level</label>
-                                <input id="edu_level" type="text" class="form-control" name="edu_level">
+                                <label for="">Enter Position</label>
+                                <input id="position" type="text" class="form-control" name="position">
                                 <span class="text-danger">
-                                    @error('edu_level')
+                                    @error('position')
                                         {{ $message }}
                                     @enderror
                                 </span>
@@ -31,26 +31,16 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="">Enter Passing Year</label>
-                                <input id="passing_year" type="text" class="form-control" name="passing_year">
+                                <label for="">Enter Time</label>
+                                <input id="time" type="text" class="form-control" name="time">
                                 <span class="text-danger">
-                                    @error('passing_year')
+                                    @error('time')
                                         {{ $message }}
                                     @enderror
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Enter Your Result</label>
-                                <input id="result" type="text"  class="form-control" name="result">
-                                <span class="text-danger">
-                                    @error('result')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                            </div>
-                        </div>
+                       
                     </div>
                                      
                     <br>

@@ -4,15 +4,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Frontend\ContactController;
 
 
 
 Route::get('/', [HomeController::class, 'index']);
+Route::post('/frontend/contact', [ContactController::class, 'contact_post'])->name('contact.post');
+
+
+
+// All backend route--------------->
+
 Route::get('/admin/login', [LoginController::class, 'login']);
 Route::post('/admin/login/check', [LoginController::class, 'check_login'])->name('login.check');
 Route::get('/admin/dashboard', [DashboardController::class, 'admin_dashboard']);
 Route::get('/admin/registration', [LoginController::class, 'registration']);
 Route::post('/admin/registration/store', [LoginController::class, 'registration_store'])->name('registration.store');
+
+//profile route
 Route::get('/admin/dashboard/profile/view', [DashboardController::class, 'profile_view'])->name('admin.dashboard');
 
 //about route
@@ -46,6 +55,13 @@ Route::get('/admin/dashboard/education/edit/{id}', [DashboardController::class, 
 Route::post('/admin/dashboard/education/update/{id}', [DashboardController::class, 'education_update'])->name('education.update');
 Route::get('/admin/dashboard/education/delete/{id}', [DashboardController::class, 'education_delete'])->name('education.delete');
 
+//Expericance route
+Route::get('/admin/dashboard/experience/view', [DashboardController::class, 'experience_view'])->name('experience.view');
+Route::get('/admin/dashboard/experience/add', [DashboardController::class, 'experience_add'])->name('experience.add');
+Route::post('/admin/dashboard/experience/store', [DashboardController::class, 'experience_store'])->name('experience.store');
+Route::get('/admin/dashboard/experience/edit/{id}', [DashboardController::class, 'experience_edit'])->name('experience.edit');
+Route::post('/admin/dashboard/experience/update/{id}', [DashboardController::class, 'experience_update'])->name('experience.update');
+Route::get('/admin/dashboard/experience/delete/{id}', [DashboardController::class, 'experience_delete'])->name('experience.delete');
 
 
 

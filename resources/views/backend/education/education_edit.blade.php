@@ -4,7 +4,7 @@
         <div class="row justify-content-center pt-5">
             <div class="col-md-12 ">
                 <h1 class="bg-primary">Edit your Education Details </h1>
-                <form action="{{ route('education.update', $find_specefic_education_data->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('education.update', $find_specefic_education_data->id) }}" method="POST" >
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
