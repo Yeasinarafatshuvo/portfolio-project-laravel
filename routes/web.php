@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\FrontDataController;
 
 
 

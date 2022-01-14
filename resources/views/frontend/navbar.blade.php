@@ -12,7 +12,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <ul class="navbar-nav menu-navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#about">About</a>

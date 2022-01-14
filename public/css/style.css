@@ -122,6 +122,8 @@ p{
     line-height: 28px;
     letter-spacing: 1px;
     font-weight: 400px;
+    text-align: justify;
+
 }
 
 .subtitle{
@@ -221,7 +223,7 @@ button{
      width: 100%;
      height: auto;
      min-height: 650px;
-     background-image: url('../images/bg-image.jpg');
+     /* background-image: url('../images/bg-image.jpg'); */
      /* background-image: url('../images/yeasin.JPG'); */
      background-repeat: no-repeat;
      background-size: cover;

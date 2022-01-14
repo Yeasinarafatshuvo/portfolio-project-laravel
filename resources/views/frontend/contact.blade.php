@@ -15,7 +15,7 @@
             <a href="">yeasinshuvo76@gmail.com</a>
           </div>
         </div>
-        <form action="{{ route('contact.post') }}" method="POST">
+        <form  action="{{ route('contact.post') }}" method="POST">
           @csrf
           @if (Session::get('success'))
             <div class="alert alert-success">
@@ -54,7 +54,7 @@
                 {{ $message }}
             @enderror
           </span><br>
-          <button  type="submit" class="btn main-btn">Submit</button>     
+          <button   type="submit" class="btn main-btn">Submit</button>     
         </form>
       </div>
       <div class="col-lg-6 order-1 mb-4 order-lg-1 mb-lg-0">
