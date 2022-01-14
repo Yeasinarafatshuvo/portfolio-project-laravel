@@ -64,5 +64,7 @@ Route::get('/admin/dashboard/experience/edit/{id}', [DashboardController::class,
 Route::post('/admin/dashboard/experience/update/{id}', [DashboardController::class, 'experience_update'])->name('experience.update');
 Route::get('/admin/dashboard/experience/delete/{id}', [DashboardController::class, 'experience_delete'])->name('experience.delete');
 
+//project route
+Route::get('/admin/dashboard/project/view', [DashboardController::class, 'project_view'])->name('project.view');
 
 

@@ -22,7 +22,8 @@
     @include('frontend.navbar')
     @include('frontend.banner')
     @include('frontend.about')
-    @include('frontend.services')
+    @include('frontend.protfolio')
+    @include('frontend.services') 
     @include('frontend.contact')
     @include('frontend.footer')
     

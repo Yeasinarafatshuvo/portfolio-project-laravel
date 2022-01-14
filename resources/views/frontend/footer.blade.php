@@ -10,16 +10,16 @@
         <div class="col-lg-4 col-md-6">
           <ul class="list-unstyled d-flex justify-content-center justify-content-md-end justify-content-lg-center social-icon mb-3 mb-md-0">
               <li>
-                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Yeasinarafatshuvo" target="_blank" ><i class="fab fa-github"></i></i></a>
               </li>
               <li>
-                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/yeasin.arafat.562114/" target="_blank" ><i class="fab fa-facebook-f"></i></a>
               </li>
               <li>
-                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href="" target="_blank" ><i class="fab fa-twitter"></i></a>
               </li>
               <li>
-                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/yeasin-arafat-93b34919a/" target="_blank" ><i class="fab fa-linkedin-in"></i></a>
               </li>
           </ul>
         </div>

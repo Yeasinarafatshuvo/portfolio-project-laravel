@@ -43,6 +43,11 @@
                             <i class="fas fa-book-open"></i> <span class="ms-1 d-none d-sm-inline">Experience</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('project.view') }}" class="nav-link align-middle px-0">
+                            <i class="far fa-address-card"></i> <span class="ms-1 d-none d-sm-inline">Protfolio</span>
+                        </a>
+                    </li>
                    
                     {{-- <li>
                         <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
