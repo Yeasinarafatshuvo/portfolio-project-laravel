@@ -58,7 +58,7 @@
         </form>
       </div>
       <div class="col-lg-6 order-1 mb-4 order-lg-1 mb-lg-0">
-        <img src="./images/contact.jpg" alt="" class="img-fluid">
+        <img src="{{ asset('backend/images/' .$all_banner_data['0']['Profile']['user_photo']) }}" alt="" class="img-fluid ">
       </div>
       </div>
     </div>

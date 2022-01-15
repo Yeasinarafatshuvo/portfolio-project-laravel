@@ -22,7 +22,7 @@
     @include('frontend.navbar')
     @include('frontend.banner')
     @include('frontend.about')
-    @include('frontend.protfolio')
+    @include('frontend.portfolio')
     @include('frontend.services') 
     @include('frontend.contact')
     @include('frontend.footer')

@@ -45,7 +45,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('project.view') }}" class="nav-link align-middle px-0">
-                            <i class="far fa-address-card"></i> <span class="ms-1 d-none d-sm-inline">Protfolio</span>
+                            <i class="far fa-address-card"></i> <span class="ms-1 d-none d-sm-inline">Portfolio</span>
                         </a>
                     </li>
                    
@@ -86,7 +86,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li><a class="dropdown-item " href="#">Settings</a></li>
-                          <li><a class="dropdown-item " href="#">Sign Out</a></li>
+                          <li><a class="dropdown-item " href="{{ route('admin.logout') }}">Sign Out</a></li>
                         
                         </ul>
                       </li>

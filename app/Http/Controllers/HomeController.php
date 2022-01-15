@@ -8,6 +8,8 @@ use App\Models\About;
 use App\Models\Skill;
 use App\Models\Experience;
 use App\Models\Education;
+use App\Models\Project;
+
 class HomeController extends Controller
 {
     public function index()
@@ -20,6 +22,9 @@ class HomeController extends Controller
         // dd($data['all_backend_data'] );
         $data['all_experience_data'] = Experience::all();
         $data['all_education_data'] = Education::all();
+        $data['all_project_data'] = Project::all();
+
+        
         return view('frontend.layouts.app', $data);
     }
 

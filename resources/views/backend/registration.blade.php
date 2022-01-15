@@ -65,7 +65,7 @@
                                 @enderror
                             </span>
                         </div>
-                        <a href="" class="float-end text-decoration-none">I already have an account!</a><br>
+                        <a href="{{ route('admin.login') }}" class="float-end text-decoration-none">I already have an account!</a><br>
                         <button class="btn btn-primary mb-1">Register</button>
                     </form>
                 </div>

@@ -31,7 +31,7 @@
                                 @enderror
                             </span>
                         </div>
-                        <a href="" class="float-end text-decoration-none">I don't have an account!</a><br>
+                        <a href="{{ route('admin.registration') }}" class="float-end text-decoration-none">I don't have an account!</a><br>
                         <button class="btn btn-primary mb-1">submit</button>
                     </form>
                 </div>

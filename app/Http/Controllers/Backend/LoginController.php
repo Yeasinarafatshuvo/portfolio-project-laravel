@@ -14,6 +14,16 @@ class LoginController extends Controller
         return view('backend.login');
     }
 
+     //logout function 
+     public function logOut(Request $request)
+     {
+         if($request->session()->has('logged_user'))
+         {
+             $request->session()->flush('logged_user');
+             return redirect()->route('admin.login');
+         }
+     }
+
     public function registration()
     {
         return view('backend.registration');
@@ -102,6 +112,8 @@ class LoginController extends Controller
         }
 
     }
+
+    
 }
 
 

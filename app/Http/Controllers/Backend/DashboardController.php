@@ -10,6 +10,7 @@ use App\Models\Skill;
 use App\Models\Banner;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Project;
 
 class DashboardController extends Controller
 {
@@ -462,6 +463,105 @@ class DashboardController extends Controller
         }
     }
 
+    //view project 
+    public function project_view()
+    {
+        $data['all_project_data'] = Project::all();
+        return view('backend.project.project_view', $data);
+    }
+
+    //add project
+    public function project_add()
+    {
+        return view('backend.project.project_add');
+    }
+
+    //store project data
+    public function project_store(Request $request)
+    {
+       //validate data 
+       $validate_data = $request->validate([
+            'project_name' => 'required',
+            'project_photo' => 'required|image|mimes:jpeg,png,jpg,svg',
+            'project_url' => 'required'
+       ]);
+
+
+       if($validate_data)
+       {
+           $project_instance = new Project();
+           $project_instance->project_name = $request->project_name;
+           $project_instance->project_url = $request->project_url;
+
+           if($request->file('project_photo'))
+           {
+               $file = $request->file('project_photo');
+                //dd($file);
+                $file_name = 'shuvo'.date('YmHi').'.'.$file->extension();
+                // dd($file_name);
+                $file->move(public_path('backend/images'), $file_name);
+                $project_instance['project_photo'] = $file_name;
+
+           }
+
+           $save_data = $project_instance->save();
+
+           if($save_data)
+            {
+                return redirect()->route('project.view')->with('success', 'Successfully, added your Project');
+            }
+
+
+       }
+
+
+    }
+
+    //edit project data
+    public function project_edit($id)
+    {
+        $find_specefic_data = Project::find($id);
+        return view('backend.project.project_edit', compact('find_specefic_data'));
+    }
+
+    //project data update
+    public function project_update(Request $request, $id)
+    {
+        $find_specefic_project_data = Project::find($id);
+        //validate data 
+        $validate_data = $request->validate([
+            'project_name' => 'required',          
+            'project_url' => 'required',
+        ]);
+
+      
+        if($validate_data)
+        {
+            $find_specefic_project_data->project_name = $request->project_name;
+            $find_specefic_project_data->project_url = $request->project_url;
+
+            if($request->file('project_photo'))
+            {
+                $file = $request->file('project_photo');
+                //dd($file);
+                @unlink(public_path('backend/images/'.$find_specefic_project_data->project_photo));
+                $file_name = 'shuvo'.date('YmHi').'.'.$file->extension();
+                // dd($file_name);
+                $file->move(public_path('backend/images'), $file_name);
+                $find_specefic_project_data['project_photo'] = $file_name;
+
+            }
+
+            $save_data = $find_specefic_project_data->save();
+
+            if($save_data)
+                {
+                    return redirect()->route('project.view')->with('success', 'Successfully, updated your Project');
+                }
+
+            }
+
+    }
 
 
 

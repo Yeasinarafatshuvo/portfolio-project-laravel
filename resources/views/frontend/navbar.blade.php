@@ -27,7 +27,7 @@
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="main-btn" href="#hire-me">Hire Me</a>
+                    <a class="main-btn" href="#contact">Hire Me</a>
                 </li>
               </ul>
           </div>
